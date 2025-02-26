@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Online Smart Phone Order</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Online Smart Phone Order Request</h1>
+        <form action="/submitOrder" method="post">
+            <div class="form-group">
+                <h2>Personal Information</h2>
+                Name: <input type="text" name="name" required/><br/>
+                Email: <input type="email" name="email" required/><br/>
+                Phone Area Code: <input type="text" name="areaCode" pattern="[0-9]{3}" required title="Please enter a valid area code (3 digits)."/><br/>
+                Phone Number: <input type="tel" name="phone" pattern="[0-9]*" required title="Please enter a valid phone number using digits only."/><br/>
+            </div>
+
+            <div class="form-group">
+                <h2>Billing Address</h2>
+                Address Line 1: <input type="text" name="addressLine1" required/><br/>
+                Address Line 2: <input type="text" name="addressLine2"/><br/>
+                City: <input type="text" name="city" required/><br/>
+                State/Province: 
+                <select name="province" required>
+                    <option value="">Select Province</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                </select><br/>
+                ZIP Code: <input type="text" name="zipcode" pattern="[0-9]*" required title="Please enter a valid ZIP code."/><br/>
+                Country: <input type="text" name="country" required/><br/>
+            </div>
+
+            <div class="form-group">
+                <h2>Product Details</h2>
+                Phone Brand: 
+                <select name="phoneBrand">
+                    <option value="iPhone">iPhone</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Google">Google</option>
+                </select><br/>
+                Phone Model: <input type="text" name="phoneModel" required/><br/>
+                Phone Price: <input type="number" name="phonePrice" step="0.01" required/><br/>
+                Quantity: <input type="number" name="quantity" required/><br/>
+            </div>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+    <a href="/home">Go to Homepage</a>
+</body>
+</html>

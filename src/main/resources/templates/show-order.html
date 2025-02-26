@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" th:href="@{/css/order-details.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span th:text="${order.name}">Name</span>.</h1>
+        <h2>Your Order details are as follows:</h2>
+        <div class="order-details">
+            <div class="order-item">
+                <p>Email Address: <span th:text="${order.email}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Phone Number: <span th:text="${order.areaCode} + ' ' + ${order.phone}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Address Line 1: <span th:text="${order.addressLine1}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Address Line 2: <span th:text="${order.addressLine2}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>City: <span th:text="${order.city}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Province: <span th:text="${order.province}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>ZIP Code: <span th:text="${order.zipcode}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Country: <span th:text="${order.country}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Phone Brand: <span th:text="${order.phoneBrand}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Phone Model: <span th:text="${order.phoneModel}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Phone Price: <span th:text="${order.phonePrice}"></span></p>
+            </div>
+            <div class="order-item">
+                <p>Quantity: <span th:text="${order.quantity}"></span></p>
+            </div>
+        </div>
+        <h3>Total: CAD <span th:text="${total}"></span></h3>
+    </div>
+</body>
+</html>
